@@ -1,0 +1,8 @@
+{
+  "name": "LinguaSync - القارئ السينمائي ثنائي اللغة",
+  "description": "تطبيق القراءة التفاعلي والمزامنة اللغوية الذكية للنصوص الإنجليزية والعربية مع المعجم الشامل وتحليل النطق بالذكاء الاصطناعي.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

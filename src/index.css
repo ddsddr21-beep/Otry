@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #070a12;
+    --panel-bg: rgba(15, 23, 42, 0.75);
+    --border-subtle: rgba(99, 102, 241, 0.2);
+    --accent-primary: #6366f1;
+    --accent-secondary: #f59e0b;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-serif: 'Literata', 'Cormorant Garamond', Georgia, serif;
+    --font-arabic: 'Noto Naskh Arabic', 'Amiri', serif;
+    --font-cinematic: 'Cinzel', serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-main);
+    color: #f8fafc;
+    -webkit-tap-highlight-color: transparent;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overscroll-behavior-y: none;
+  }
+
+  .font-cinematic {
+    font-family: var(--font-cinematic);
+    letter-spacing: 0.06em;
+  }
+
+  .font-reading-en {
+    font-family: var(--font-serif);
+    line-height: 1.85;
+  }
+
+  .font-reading-ar {
+    font-family: var(--font-arabic);
+    line-height: 2.25;
+  }
+
+  .font-literary {
+    font-family: 'Literata', 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .font-editorial-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .font-modern-sans {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  .font-naskh-ar {
+    font-family: 'Noto Naskh Arabic', serif;
+  }
+
+  .font-amiri-ar {
+    font-family: 'Amiri', serif;
+  }
+
+  .font-mono-code {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* الأجواء والألوان */
+.theme-midnight {
+  background: radial-gradient(circle at 50% -20%, #1e1b4b 0%, #0f172a 55%, #070a12 100%);
+  color: #f8fafc;
+}
+
+.theme-parchment {
+  background: radial-gradient(circle at 50% -20%, #fef3c7 0%, #fef3c7 40%, #f59e0b10 100%);
+  color: #1e293b;
+}
+
+.theme-emerald {
+  background: radial-gradient(circle at 50% -20%, #064e3b 0%, #022c22 55%, #021712 100%);
+  color: #ecfdf5;
+}
+
+/* تأثيرات الزجاج والوهج */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card-interactive {
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-interactive:hover {
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 12px 30px -10px rgba(99, 102, 241, 0.3);
+  transform: translateY(-2px);
+}
+
+.hero-glow {
+  box-shadow: 0 0 35px -5px rgba(99, 102, 241, 0.4), 0 0 15px -3px rgba(245, 158, 11, 0.3);
+}
+
+.glass-card {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.glass-card-parchment {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(180, 140, 100, 0.25);
+}
+
+/* 3D Flip Card Classes for Flashcards */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* الدعم التلقائي لحواف الجوال الهندسية */
+.safe-bottom {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom, 1rem));
+}
+
+.safe-top {
+  padding-top: max(0.5rem, env(safe-area-inset-top, 0.5rem));
+}
+
+.pb-safe-nav {
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 5.5rem);
+}
+
+/* إخفاء شريط التمرير للشرائح الأفقية */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* تحسين تجربة اللمس للهواتف */
+@media (max-width: 640px) {
+  button, a {
+    min-height: 48px;
+    touch-action: manipulation;
+  }
+  
+  input, textarea, select {
+    font-size: 16px !important;
+  }
+}
+
+/* شريط التمرير الدقيق */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.6);
+}
